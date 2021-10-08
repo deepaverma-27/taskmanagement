@@ -1,0 +1,21 @@
+<%= form_with model: task do |form| %>
+  <div>
+    <% task.errors.full_messages.each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %></br>
+    <%= form.label :description %><br>
+    <%= form.text_field :description%></br>
+
+
+    <%= form.label :project_id%></br>
+    <%= form.collection_select :project_id, Project.order(:name),:id,:name, include_blank: true %>
+
+  
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+  

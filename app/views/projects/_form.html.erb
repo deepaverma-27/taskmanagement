@@ -1,0 +1,19 @@
+  
+  <%= form_with model: project do |form| %>
+  <div>
+    <%= form.label :name%><br>
+    <%= form.text_field :name%>
+    <% project.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  
+
+  
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+  
+
+
